@@ -6,17 +6,12 @@ import dlib
 import cv2
 
 
-ap = argparse.ArgumentParser()
-ap.add_argument("-p", "--shape-predictor", required=True,
-	help="path to facial landmark predictor")
-ap.add_argument("-i", "--image", required=True,
-	help="path to input image")
-args = vars(ap.parse_args())
 
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor(args["shape_predictor"])
-
-image = cv2.imread(args["image"])
+predictor = shape_predictor_68_face_landmarks.dat
+#data set for facial landmark detection
+image = example.jpg
+#provide an example image here
 image = imutils.resize(image, width=500)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
